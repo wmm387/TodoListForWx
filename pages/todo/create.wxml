@@ -7,8 +7,8 @@
         bindchange="handleTodoItemChange"
         auto-focus>
       </todo-item>
-    </view>
-    <view class='field-item'>
+     </view>
+    <!-- <view class='field-item'>
       <label class='field-label'>优先级</label>
       <label class='field-control'>
         <picker
@@ -19,7 +19,7 @@
           {{ levels[todo.level - 1] }}
         </picker>
       </label>
-    </view>
+    </view>  -->
     <view class='field-item'>
       <label class='field-label'>描述</label>
       <label class='field-control'>

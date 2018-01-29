@@ -2,13 +2,11 @@
 .todo-item {
   display: flex;
   background: #FFF;
-  border-left: 8rpx solid red;
   font-size: 32rpx;
   padding: 22rpx 15rpx; 
-  /* border-bottom: 1rpx dashed #f0f3ff;  */
 }
 
-.todo-item--level1 {
+/* .todo-item--level1 {
   border-left-color: red;
 }
 .todo-item--level2 {
@@ -19,7 +17,7 @@
 }
 .todo-item--level4 {
   border-left-color: #A3ABAE;
-}
+} */
 
 .todo-item__col1 {
   flex: 1;

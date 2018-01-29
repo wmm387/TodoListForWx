@@ -11,7 +11,7 @@
   background: #fff;
 }
 
- .todo-list__item {} 
+ /* .todo-list__item {}  */
 
 /* todo-add */
 .todo-add {

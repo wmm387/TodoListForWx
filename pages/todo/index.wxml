@@ -6,9 +6,10 @@
     <view
       wx:for="{{todos}}"
       wx:key="{{index}}"
-      wx:if="{{!item.completed}}"
-      class='todo-list__item ripple fast fadeInRight'
-      style='animation-delay: {{delay ? index * 0.1 : 0 }}s'>
+      wx:if="{{!item.completed}}">
+      <!-- class='todo-list__item ripple fast fadeInRight' 
+      style='animation-delay: {{delay ? index * 0.1 : 0 }}s'
+      > -->
     
       <todo-item
         class='todo-item'
@@ -20,7 +21,7 @@
 
     </view>
     <view class='ripple bounceIn' wx:if="{{!uncompletedCount}}">
-      <tips-info text='太棒了,你的任务已全部完成啦!'></tips-info>
+      <tips-info text='没有任务,赶紧创建一个吧'></tips-info>
     </view>
   </view>
 
@@ -29,15 +30,14 @@
     <view
       wx:for="{{todos}}"
       wx:key="{{index}}"
-      wx:if="{{item.completed}}"
-      class='todo-list__item ripple fast fadeInRight'
-      style='animation-delay: {{delay ? index * 0.1 : 0 }}s'>
+      wx:if="{{item.completed}}">
+      <!-- class='todo-list__item ripple fast fadeInRight'
+      style='animation-delay: {{delay ? index * 0.1 : 0 }}s'> -->
 
       <todo-item
         class='todo-item'
         todo="{{item}}"
         data-index="{{index}}"
-        bindchange="handleTodoItemChange"
         bindlongpress="handleTodoLongclick">
       </todo-item>
 

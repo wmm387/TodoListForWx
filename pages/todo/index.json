@@ -1,5 +1,5 @@
 {
-   "navigationBarTitleText": "任务",
+   "navigationBarTitleText": "清单",
    "usingComponents": {
       "todo-item": "/components/todo-item/todo-item",
       "tips-info": "/components/tips-info/tips-info"

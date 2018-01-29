@@ -2,9 +2,7 @@
 <view class='page'>
   <view
     wx:for="{{notes}}"
-    wx:key="{{index}}"
-    class='ripple fast fadeInRight'
-    style='animation-delay: {{delay ? index * 0.1 : 0}}s'>
+    wx:key="{{index}}">
     <note-card
       note="{{item}}"
       data-index="{{index}}"

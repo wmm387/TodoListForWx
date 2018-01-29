@@ -1,17 +1,15 @@
 {
   "pages":[
-    "pages/index/index",
     "pages/todo/index",
     "pages/todo/create",
     "pages/note/index",
-    "pages/note/create",
-    "pages/me/index"
+    "pages/note/create"
   ],
   "window":{
     "backgroundTextStyle":"light",
-   "navigationBarBackgroundColor": "#6482DD",
-   "navigationBarTitleText": "Todo List",
-   "navigationBarTextStyle": "white"
+    "navigationBarBackgroundColor": "#6482DD",
+    "navigationBarTitleText": "Todo List",
+    "navigationBarTextStyle": "white"
   },
    "tabBar": {
       "color": "#333333",
@@ -21,7 +19,7 @@
       "list": [
          {
             "pagePath": "pages/todo/index",
-            "text": "任务",
+            "text": "清单",
             "iconPath": "/assets/img/icon-todo.png",
             "selectedIconPath": "/assets/img/icon-todo-active.png"
          },
@@ -30,12 +28,6 @@
             "text": "便签",
             "iconPath": "/assets/img/icon-note.png",
             "selectedIconPath": "/assets/img/icon-note-active.png"
-         },
-         {
-            "pagePath": "pages/me/index",
-            "text": "我",
-            "iconPath": "/assets/img/icon-user.png",
-            "selectedIconPath": "/assets/img/icon-user-active.png"
          }
       ]
    }

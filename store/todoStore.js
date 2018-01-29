@@ -46,33 +46,12 @@ class TodoStore extends Store {
          level: 4,
          createdAt: new Date()
       }), new Todo({
-         title: '这是一条已完成的任务1',
+         title: '这是一条已完成的任务',
          completed: true,
          level: 4,
          date: new Date('2017/11/18'),
          createdAt: new Date(),
          completedAt: new Date('2017/11/18')
-      }), new Todo({
-         title: '这是一条已完成的任务2',
-         completed: true,
-         level: 4,
-         date: new Date('2017/11/19'),
-         createdAt: new Date(),
-         completedAt: new Date('2017/11/19')
-      }), new Todo({
-         title: '这是一条已完成的任务3',
-         completed: true,
-         level: 4,
-         date: new Date('2017/11/20'),
-         createdAt: new Date(),
-         completedAt: new Date('2017/11/20')
-      }), new Todo({
-         title: '这是一条已完成的任务4',
-         completed: true,
-         level: 4,
-         date: new Date('2017/11/20'),
-         createdAt: new Date(),
-         completedAt: new Date('2017/11/20')
       })])
       this.save()
       wx.setStorageSync('__todos_inited__', true)

@@ -9,10 +9,11 @@ Page({
   },
 
   onLoad: function (options) {
+
     //是否编辑
-    if (options.uuid) {
+    if (options.id) {
       this.data.edit = true
-      let editNote = noteStore.getNote(options.uuid)
+      let editNote = noteStore.getNoteByIndex(options.id)
       this.data.note = new Note(editNote)
     } else {
       this.data.note = new Note()

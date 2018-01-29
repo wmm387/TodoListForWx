@@ -33,17 +33,23 @@ Page({
   },
 
   handleNoteClick(e) {
-    //TODO
-    wx.showToast({ title: '点击事件' })
+    wx.navigateTo({
+      url: '../note/create?id=' + e.currentTarget.dataset.index,
+    })
   },
 
   handleNoteLongclick(e) {
-    console.log(e)
-  },
-
-  handleNoteTouchEnd() {
-    //TODO
-    wx.showToast({ title: '点击结束事件' })
+    let index = e.currentTarget.dataset.index
+    wx.showModal({
+      title: '删除提示',
+      content: '确定要删除此便签吗?',
+      success: (e) => {
+        if(e.confirm) {
+          this.data.notes.splice(index, 1)
+          this.update()
+        }
+      }
+    })
   },
 
   handleAddNote() {

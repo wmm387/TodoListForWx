@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "笔记",
+    "navigationBarTitleText": "便签",
     "usingComponents": {
       "note-card": "/components/note-card/note-card",
       "tips-info": "/components/tips-info/tips-info"

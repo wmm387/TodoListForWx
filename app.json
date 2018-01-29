@@ -27,7 +27,7 @@
          },
          {
             "pagePath": "pages/note/index",
-            "text": "笔记",
+            "text": "便签",
             "iconPath": "/assets/img/icon-note.png",
             "selectedIconPath": "/assets/img/icon-note-active.png"
          },

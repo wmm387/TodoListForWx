@@ -15,8 +15,9 @@ Page({
     uncompletedCount: 0,
     completedCount: 0,
 
-    //是否动画延迟
-    delay: true
+    //记录手指点击坐标
+    clientX: 0,
+    clientY: 0
   },
 
   /**
@@ -48,10 +49,6 @@ Page({
     let title = ['TodoList (进行中: ', uncompletedCount, ', 今日已完成: ',
                   todayCompletedCount, ') '].join('')
     wx.setTopBarText({ text: title })
-    //动画结束后取消动画队列延迟
-    setTimeout(() => {
-      this.update({ delay: false })
-    }, 2000)
   },
 
   handleTodoItemChange(e) {
@@ -75,6 +72,33 @@ Page({
         }
       }
     })
+  },
+
+  handleTouchStart(e) {
+    this.data.clientX = e.changedTouches[0].clientX
+    this.data.clientY = e.changedTouches[0].clientY
+  },
+
+  handleTouchEnd(e) {
+    let x = e.changedTouches[0].clientX
+    let y = e.changedTouches[0].clientY
+    let index = e.currentTarget.dataset.index
+    if (x - this.data.clientX > 100 && Math.abs(y - this.data.clientY) < 30) {
+      this.data.todos[index].completed = !this.data.todos[index].completed
+    }
+    if (this.data.clientX - x > 100 && Math.abs(y - this.data.clientY) < 30) {
+      wx.showModal({
+        title: '删除提示',
+        content: '确定要删除这项任务吗?',
+        success: (e) => {
+          if (e.confirm) {
+            this.data.todos.splice(index, 1)
+            this.update()
+          }
+        }
+      })
+    }
+    this.update()
   },
 
   update(data) {

@@ -13,7 +13,6 @@
     <input
       class='todo-item__title'
       value='{{ todo.title }}'
-      placeholder='准备做什么?'
       bindinput='handleTitleChange'
       auto-focus='{{ autoFocus }}'
       disabled="{{ todo.completed ? 'disabled' : '' }}">

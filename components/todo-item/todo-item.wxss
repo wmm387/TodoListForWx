@@ -6,19 +6,6 @@
   padding: 22rpx 15rpx; 
 }
 
-/* .todo-item--level1 {
-  border-left-color: red;
-}
-.todo-item--level2 {
-  border-left-color: #FDC533;
-}
-.todo-item--level3 {
-  border-left-color: #5872DE;
-}
-.todo-item--level4 {
-  border-left-color: #A3ABAE;
-} */
-
 .todo-item__col1 {
   flex: 1;
 }

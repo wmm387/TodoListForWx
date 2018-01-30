@@ -6,10 +6,7 @@ Page({
 
   data: {
     //todo
-    todo: new Todo(),
-
-    //级别
-    levels: ['紧急且重要', '重要不紧急', '紧急不重要', '不紧急不重要']  
+    todo: new Todo(), 
   },
 
   onLoad: function (options) {
@@ -24,12 +21,6 @@ Page({
   handleTodoItemChange(e) {
     let todo = e.detail.data.todo
     Object.assign(this.data.todo, todo)
-    this.update()
-  },
-
-  //级别改变事件
-  handleLevelChange(e) {
-    this.data.todo.level = parseInt(e.detail.value) + 1
     this.update()
   },
 

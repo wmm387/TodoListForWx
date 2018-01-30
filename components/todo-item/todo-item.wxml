@@ -1,5 +1,5 @@
 <!--components/todo-item/todo-item.wxml-->
-<view class="todo-item todo-item--level {{ todo.completed ? 'todo-item--completed' : '' }} ">
+<view class="todo-item {{ todo.completed ? 'todo-item--completed' : '' }} ">
 
   <view class='todo-item__col1'>
     <todo-checkbox
@@ -14,8 +14,9 @@
       class='todo-item__title'
       value='{{ todo.title }}'
       bindinput='handleTitleChange'
+      placeholder='准备做什么?'
       auto-focus='{{ autoFocus }}'
-      disabled="{{ todo.completed ? 'disabled' : '' }}">
+      disabled="disabled">
     </input>
   </view>
 

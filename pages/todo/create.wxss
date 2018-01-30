@@ -1,4 +1,19 @@
 /* pages/todos/create.wxss */
-.field-content {
-  border: 1px solid red;
+.create_page {
+  background-color: #fff;
+}
+
+.todo-item__date {
+  font-size: 35rpx;
+  color: #ccc;
+  margin-left: 30rpx;
+  display: inline-block;
+  text-align: center;
+}
+
+.created {
+  float: right;
+  margin-right: 30rpx;
+  font-size: 35rpx;
+  color: #FFB90F;
 }

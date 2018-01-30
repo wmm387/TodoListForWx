@@ -6,12 +6,21 @@ Page({
 
   data: {
     //todo
-    todo: new Todo(), 
+    todo: new Todo(),
+    //是否编辑
+    edit: false
   },
 
   onLoad: function (options) {
-    this.data.todo = new Todo()
-    this.update()  
+
+    if (options.index) {
+      this.data.edit = true
+      let editTodo = todoStore.getTodoByIndex(options.index)
+      this.data.todo = new Todo(editTodo)
+    } else {
+      this.data.todo = new Todo()
+    }
+    this.update()
   },
 
   //分享

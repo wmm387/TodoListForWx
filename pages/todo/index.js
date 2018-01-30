@@ -60,17 +60,8 @@ Page({
   },
 
   handleTodoLongclick(e) {
-    //获取index
-    let index = e.currentTarget.dataset.index
-    wx.showModal({
-      title: '删除提示',
-      content: '确定要删除这项任务吗?',
-      success: (e) => {
-        if (e.confirm) {
-          this.data.todos.splice(index, 1)
-          this.update()
-        }
-      }
+    wx.navigateTo({
+      url: '../todo/create?index=' + e.currentTarget.dataset.index,
     })
   },
 
@@ -83,10 +74,10 @@ Page({
     let x = e.changedTouches[0].clientX
     let y = e.changedTouches[0].clientY
     let index = e.currentTarget.dataset.index
-    if (x - this.data.clientX > 100 && Math.abs(y - this.data.clientY) < 30) {
+    if (x - this.data.clientX > 80 && Math.abs(y - this.data.clientY) < 30) {
       this.data.todos[index].completed = !this.data.todos[index].completed
     }
-    if (this.data.clientX - x > 100 && Math.abs(y - this.data.clientY) < 30) {
+    if (this.data.clientX - x > 80 && Math.abs(y - this.data.clientY) < 30) {
       wx.showModal({
         title: '删除提示',
         content: '确定要删除这项任务吗?',

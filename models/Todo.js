@@ -10,9 +10,7 @@ class Todo extends Model {
       super()
       Object.assign(this, {
          title: '',
-         desc: '',
          date: new Date(),
-         level: 2,
          completed: false,
          createdAt: new Date(),
          completedAt: new Date()

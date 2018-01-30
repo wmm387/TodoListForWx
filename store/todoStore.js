@@ -18,37 +18,30 @@ class TodoStore extends Store {
       this.todos = this.todos.concat([new Todo({
          title: '欢迎使用TodoList',
          completed: false,
-         level: 1,
          createdAt: new Date()
       }), new Todo({
-         title: '点击左边勾选框完成一项任务',
+         title: '点击勾选框或向右滑完成任务',
          completed: false,
-         level: 1,
          createdAt: new Date()
       }), new Todo({
-         title: '点击标题可以编辑任务哦',
+         title: '点击进入详情可进行编辑',
          completed: false,
-         level: 2,
          createdAt: new Date()
       }), new Todo({
          title: '点击右边日期可修改日期',
          completed: false,
-         level: 3,
          createdAt: new Date()
       }), new Todo({
          title: '点击下面的 + 新建一项任务吧',
          completed: false,
-         level: 4,
          createdAt: new Date()
       }), new Todo({
-         title: '长按可删除任务',
+         title: '长按或左滑可删除任务',
          completed: false,
-         level: 4,
          createdAt: new Date()
       }), new Todo({
          title: '这是一条已完成的任务',
          completed: true,
-         level: 4,
          date: new Date('2017/11/18'),
          createdAt: new Date(),
          completedAt: new Date('2017/11/18')
@@ -63,6 +56,10 @@ class TodoStore extends Store {
 
    getTodo(uuid) {
       return this.todos.find((item) => item.uuid === uuid)
+   }
+
+   getTodoByIndex(index) {
+     return this.todos[index]
    }
 
    getIndex(todo) {

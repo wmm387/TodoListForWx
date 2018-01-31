@@ -1,39 +1,21 @@
 <!--pages/todo/create.wxml-->
 <view class='create_page'>
-    <view class='create_header' bindtap='handleDateClick'>
-      <picker class='todo-item__date' mode='date' bindchange='handleDateChange'>
+    <view class='create_header'>
+      <picker class='todo-item__date' mode='date'>
         {{ todo.date }}
       </picker>
       <text class='created' bindtap='handleSaveTap'>{{ todo.title ? '完成' : '' }}</text>
     </view>
-    <!-- <view class='create-header'>
-      <todo-item
-        todo="{{todo}}"
-        bindchange="handleTodoItemChange"
-        auto-focus>
-      </todo-item> 
 
-      <view class='todo-item__col2'>
-        <input
-          class='todo-item__title'
-          value='{{ todo.title }}'
-          bindinput='handleTitleChange'
-          placeholder='准备做什么?'
-          auto-focus='{{ autoFocus }}'>
-        </input>
-      </view>
-
-      <view class='todo-item__col3' bindtap='handleDateClick'>
-        <picker class='todo-item__date' mode='date' bindchange='handleDateChange'>
-          {{ todo.date }}
-        </picker>
-      </view>
-
-     </view> -->
-  <!-- <view class='fixed-bottom'>
-    <view class='button-group'>
-      <button class='button' bindtap='handleCancelTap'>取消</button>
-      <button class='button button-primary' bindtap='handleSaveTap'>保存</button>
+    <view class='field-item'>
+      <textarea
+        class='field-input w-full'
+        value='{{ todo.title }}'
+        placeholder='准备做什么?'
+        bindinput='handleTitleChange'
+        auto-focus='true'
+        show-confirm-bar=''
+        >
+      </textarea>
     </view>
-  </view> -->
 </view>

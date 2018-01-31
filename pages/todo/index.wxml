@@ -37,8 +37,7 @@
         data-index="{{index}}"
         bindchange="handleTodoItemChange"
         bindtouchstart='handleTouchStart'
-        bindtouchend='handleTouchEnd'
-        bindlongpress="handleTodoLongclick">
+        bindtouchend='handleTouchEnd'>
       </todo-item>
 
     </view>

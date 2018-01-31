@@ -17,3 +17,14 @@
   font-size: 35rpx;
   color: #FFB90F;
 }
+
+.create_header {
+  margin-top: 20rpx;
+}
+
+.todo-item__title {
+  color: #2C323F;
+  display: inline-block;
+  vertical-align: middle;
+  width: 98%;
+}

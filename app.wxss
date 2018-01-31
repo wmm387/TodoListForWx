@@ -12,6 +12,15 @@
   overflow: hidden;
 }
 
+.create_page {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding-bottom: 100rpx;
+  overflow: hidden;
+}
+
 button::after {
   border: 0; 
 }

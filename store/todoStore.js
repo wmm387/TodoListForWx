@@ -88,6 +88,11 @@ class TodoStore extends Store {
       this.todos = []
    }
 
+   editTodo(uuid, newTodo) {
+     let todo = this.getTodo(uuid)
+     if (todo) Object.assign(todo, newTodo)
+   }
+
    addTodo(todo) {
       this.todos.push(todo)
    }

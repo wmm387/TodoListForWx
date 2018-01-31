@@ -21,8 +21,6 @@ Page({
     this.update()
   },
 
-  onShareAppMessage: function () {},
-
   handleTitleChange(e) {
     this.data.note.title = e.detail.value
     this.update()

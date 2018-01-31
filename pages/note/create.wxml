@@ -1,5 +1,5 @@
 <!--pages/note/create.wxml-->
-<view class='page'>
+<view class='create_page'>
   <view class='field-set' style='background: white;'>
     <view class='field-item'>
       <label class='field-label'>标题</label>
@@ -20,6 +20,7 @@
           class='field-input w-full'
           value='{{note.content}}'
           placeholder='笔记内容...'
+          show-confirm-bar=''
           bindinput='handleContentChange'>
         </textarea>
       </label>

@@ -7,12 +7,12 @@ Page({
   data: {
     //todo
     todo: new Todo(),
-    //是否编辑
-    edit: false
+    //编辑标识
+    edit: false,
   },
 
   onLoad: function (options) {
-
+    //通过是否有传入的参数进行编辑状态判断
     if (options.index) {
       this.data.edit = true
       let editTodo = todoStore.getTodoByIndex(options.index)
@@ -23,34 +23,26 @@ Page({
     this.update()
   },
 
-  //分享
-  onShareAppMessage: function (options) {},
-
-  //Todo改变事件
-  handleTodoItemChange(e) {
-    let todo = e.detail.data.todo
-    Object.assign(this.data.todo, todo)
+  //清单标题修改事件
+  handleTitleChange(e) {
+    this.data.todo.title = e.detail.value
     this.update()
-  },
-
-  //描述输入事件
-  handleDescChange(e) {
-    this.data.todo.desc = e.detail.value
-    this.update()
-  },
-
-  //取消按钮点击事件
-  handleCancelTap(e) {
-    wx.navigateBack()
   },
 
   //保存按钮点击事件
   handleSaveTap(e) {
-    todoStore.addTodo(this.data.todo)
+    //判断是否在编辑状态
+    if (this.data.edit) {
+      todoStore.editTodo(this.data.todo.uuid, this.data.todo)
+    } else {
+      todoStore.addTodo(this.data.todo)
+    }
     todoStore.save()
     wx.navigateBack()
+    wx.showToast({ title: '保存成功' })
   },
 
+  //更新数据
   update(data) {
     data = data || this.data
     this.setData(data)

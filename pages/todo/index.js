@@ -24,7 +24,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    //为了新建后列表能更新,此逻辑必须写在 onShow 事件
     this.syncData()
   },
 
@@ -35,22 +34,14 @@ Page({
     this.syncData()
   },
 
-  //分享
-  onShareAppMessage: function (options) {},
-
   //同步数据
   syncData() {
     //获取列表
     this.data.todos = todoStore.getTodos()
     this.update()
-    //更新置顶标题
-    let uncompletedCount = todoStore.getUncompletedTodos().length
-    let todayCompletedCount = todoStore.getTodayCompletedTodos().length
-    let title = ['TodoList (进行中: ', uncompletedCount, ', 今日已完成: ',
-                  todayCompletedCount, ') '].join('')
-    wx.setTopBarText({ text: title })
   },
 
+  //清单状态改变事件
   handleTodoItemChange(e) {
     let index = e.currentTarget.dataset.index
     let todo = e.detail.data.todo
@@ -59,17 +50,21 @@ Page({
     this.update()
   },
 
+  //长按进行编辑事件
   handleTodoLongclick(e) {
     wx.navigateTo({
       url: '../todo/create?index=' + e.currentTarget.dataset.index,
     })
   },
 
+  //记录滑动起始坐标
   handleTouchStart(e) {
-    this.data.clientX = e.changedTouches[0].clientX
-    this.data.clientY = e.changedTouches[0].clientY
+    if (e.changedTouches) {
+      this.data.clientX = e.changedTouches[0].clientX
+      this.data.clientY = e.changedTouches[0].clientY
+    }
   },
-
+  //通过坐标大小判断滑动状态
   handleTouchEnd(e) {
     let x = e.changedTouches[0].clientX
     let y = e.changedTouches[0].clientY
@@ -92,6 +87,7 @@ Page({
     this.update()
   },
 
+  //更新数据
   update(data) {
     data = data || this.data
     data.completedCount = todoStore.getCompletedTodos().length
@@ -99,10 +95,10 @@ Page({
     this.setData(data)
   },
 
+  //跳转添加清单事件
   handleAddTodo(e) {
     wx.navigateTo({
       url: '../todo/create'
     })
   }
-
 })

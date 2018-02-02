@@ -1,29 +1,17 @@
 <!--components/todo-item/todo-item.wxml-->
 <view class="todo-item {{ todo.completed ? 'todo-item--completed' : '' }} ">
-
-  <view class='todo-item__col1'>
-    <todo-checkbox
-      class='todo-item__checkbox'
-      checked='{{ todo.completed }}'
-      bindchange='handleCompletedChange'>
-    </todo-checkbox>
-  </view>
-
-  <view class='todo-item__col2'>
-    <input
-      class='todo-item__title'
-      value='{{ todo.title }}'
-      bindinput='handleTitleChange'
-      placeholder='准备做什么?'
-      auto-focus='{{ autoFocus }}'
-      disabled="disabled">
-    </input>
-  </view>
-
-  <view class='todo-item__col3' bindtap='handleDateClick'>
-    <picker class='todo-item__date' mode='date' bindchange='handleDateChange'>
+    <view 
+      class="todo-item__col1 todo-checkbox {{ todo.completed ? 'todo-checkbox--checked' : '' }}"
+      bindtap='handleCheckToggle'>
+      <icon
+          class="todo-checkbox__icon"
+          type='success_no_circle'
+          color="{{ todo.completed ? '#c1c5c8' : 'white' }}"
+          size='10'>
+      </icon>
+    </view>
+    <text class='todo-item__col2 todo-item__title'>{{ todo.title }}</text>
+  <view class='todo-item__col3 todo-item__date'>
       {{ todo.date }}
-    </picker>
   </view>
-
 </view>

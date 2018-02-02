@@ -3,7 +3,7 @@
   display: flex;
   background: #FFF;
   font-size: 32rpx;
-  padding: 22rpx 15rpx; 
+  padding: 20rpx 0; 
 }
 
 .todo-item__col1 {
@@ -11,41 +11,43 @@
 }
 
 .todo-item__col2 {
-  flex: 7;
+  flex: 6;
 }
 
 .todo-item__col3 {
-  flex: 2;
-}
-
-.todo-item__checkbox {
-  display: inline-block;
-  padding: 0 32rpx 0 20rpx;
-  padding-bottom: 4px;
-  vertical-align: middle;
-}
-
-.todo-item__icon {
-  color: white !important;
-  border: 5rpx solid #5872DE;
-  vertical-align: middle;
-  padding: 3rpx;
+  flex: 3;
 }
 
 .todo-item__title {
   color: #2C323F;
   display: inline-block;
-  vertical-align: middle;
-  width: 98%;
+  width: 100%;
 }
 
 .todo-item--completed .todo-item__title {
   color: #C1C5C8;
 }
 
-.todo-item__date {
+ .todo-item__date {
   font-size: 28rpx;
   color: #ccc;
   display: inline-block;
   text-align: center;
+}
+
+.todo-checkbox {
+  display: inline-block;
+  padding: 6rpx 10rpx;
+  text-align: center;
+}
+
+.todo-checkbox__icon {
+  color: white !important;
+  border: 4rpx solid #000;
+  padding: 3rpx;
+  vertical-align: super;  
+}
+
+.todo-checkbox--checked .todo-checkbox__icon{
+  border-color: #C1C5C8 !important;
 }

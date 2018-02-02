@@ -28,10 +28,6 @@ class TodoStore extends Store {
          completed: false,
          createdAt: new Date()
       }), new Todo({
-         title: '点击右边日期可修改日期',
-         completed: false,
-         createdAt: new Date()
-      }), new Todo({
          title: '点击下面的 + 新建一项任务吧',
          completed: false,
          createdAt: new Date()

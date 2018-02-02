@@ -1,6 +1,4 @@
 {
-   "component": true,
-   "usingComponents": {
-      "todo-checkbox": "/components/checkbox/checkbox"
-   }
+  "component": true,
+  "usingComponents": {}
 }

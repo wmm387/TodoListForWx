@@ -10,4 +10,3 @@
 * 拖拽排序功能
 
 页面如下:
-![new_todo](https://raw.githubusercontent.com/wmm387/TodoListForWx/master/img/new_todo.png)

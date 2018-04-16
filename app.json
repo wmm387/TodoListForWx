@@ -1,34 +1,35 @@
 {
-  "pages":[
+  "pages": [
     "pages/todo/index",
     "pages/todo/create",
     "pages/note/index",
-    "pages/note/create"
+    "pages/note/create",
+    "pages/test/test"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#6482DD",
     "navigationBarTitleText": "Todo List",
     "navigationBarTextStyle": "white"
   },
-   "tabBar": {
-      "color": "#333333",
-      "selectedColor": "#6482DD",
-      "borderStyle": "black",
-      "backgroundColor": "#FFFFFF",
-      "list": [
-         {
-            "pagePath": "pages/todo/index",
-            "text": "清单",
-            "iconPath": "/assets/img/icon-todo.png",
-            "selectedIconPath": "/assets/img/icon-todo-active.png"
-         },
-         {
-            "pagePath": "pages/note/index",
-            "text": "便签",
-            "iconPath": "/assets/img/icon-note.png",
-            "selectedIconPath": "/assets/img/icon-note-active.png"
-         }
-      ]
-   }
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#6482DD",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/todo/index",
+        "text": "清单",
+        "iconPath": "/assets/img/icon-todo.png",
+        "selectedIconPath": "/assets/img/icon-todo-active.png"
+      },
+      {
+        "pagePath": "pages/note/index",
+        "text": "便签",
+        "iconPath": "/assets/img/icon-note.png",
+        "selectedIconPath": "/assets/img/icon-note-active.png"
+      }
+    ]
+  }
 }
